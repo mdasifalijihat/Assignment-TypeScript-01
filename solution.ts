@@ -71,3 +71,18 @@ function printBookDetails(book: Book): string {
   return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`;
 }
 
+// problem- 7
+function getUniqueValues(
+  arr1: (string | number)[],
+  arr2: (string | number)[]
+): (string | number)[] {
+  const combined = [...arr1, ...arr2];
+  const unique: (string | number)[] = [];
+  for (let i = 0; i < combined.length; i++) {
+    if (!unique.includes(combined[i])) {
+      unique.push(combined[i]);
+    }
+  }
+  return unique;
+}
+
