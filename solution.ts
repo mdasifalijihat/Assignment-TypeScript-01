@@ -86,3 +86,23 @@ function getUniqueValues(
   return unique;
 }
 
+// problem - 8
+interface Product {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}
+
+function calculateTotalPrice(products: Product[]): number {
+  if (products.length === 0) return 0;
+  return products
+    .map((p) => {
+      let total = p.price * p.quantity;
+      if (p.discount) {
+        total = total - (total * p.discount) / 100;
+      }
+      return total;
+    })
+    .reduce((sum, val) => sum + val, 0);
+}
