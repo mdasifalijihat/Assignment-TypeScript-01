@@ -10,7 +10,7 @@ function formatValue(
   }
 }
 
-// problem -2 
+// problem -2
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -20,8 +20,7 @@ function getLength(value: string | any[]): number {
   return 0;
 }
 
-
-// problem-3 
+// problem-3
 
 class Person {
   name: string;
@@ -36,14 +35,25 @@ class Person {
   }
 }
 
-
 // problem - 4
 interface RatedItem {
-    title:string;
-    rating: number;
+  title: string;
+  rating: number;
 }
 
-function filterByRating (items: RatedItem[]): RatedItem[]{
-    return items.filter((item) => item.rating >= 4)
+function filterByRating(items: RatedItem[]): RatedItem[] {
+  return items.filter((item) => item.rating >= 4);
 }
 
+//problem - 5
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+}
+
+function filterActiveUsers(users: User[]): User[] {
+  return users.filter((user) => user.isActive === true);
+}
